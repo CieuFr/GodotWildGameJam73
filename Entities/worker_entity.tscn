@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://mkx5kq802ncg"]
+
+[ext_resource type="Script" path="res://WorkerEntity.gd" id="1_v2asi"]
+[ext_resource type="PackedScene" uid="uid://c816ih8m5cjw3" path="res://Entities/basic_entity.tscn" id="2_pscmm"]
+
+[node name="WorkerEntity" type="StaticBody2D"]
+script = ExtResource("1_v2asi")
+
+[node name="Sprite2D" parent="." instance=ExtResource("2_pscmm")]
