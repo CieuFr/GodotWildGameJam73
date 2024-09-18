@@ -50,7 +50,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oslna")
 }],
-"loop": true,
+"loop": false,
 "name": &"crouch",
 "speed": 10.0
 }, {
@@ -59,7 +59,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_nbti5")
 }],
 "loop": true,
-"name": &"iddle",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -72,7 +72,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f4wo0")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 2.0
 }, {
@@ -87,7 +87,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ptrqo")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"run",
 "speed": 10.0
 }]
 
@@ -101,4 +101,4 @@ shape = SubResource("RectangleShape2D_57mjm")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_v60vp")
-animation = &"iddle"
+animation = &"jump"
