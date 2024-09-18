@@ -1,14 +1,104 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq6btw8m5tgkd"]
+[gd_scene load_steps=13 format=3 uid="uid://bq6btw8m5tgkd"]
+
+[ext_resource type="Texture2D" uid="uid://c4vmw12eopo3k" path="res://Assets/KenneyAssets/Tilesheet/colored-transparent_packed.png" id="1_ypedd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57mjm"]
-size = Vector2(16, 16)
+size = Vector2(12, 11)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pwrnl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b17mn"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(288, 113, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oslna"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(368, 113, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbti5"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(288, 112, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olx6f"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(288, 113, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d34v"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(352, 113, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4wo0"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(336, 113, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75l41"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(288, 113, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdk1g"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(304, 113, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptrqo"]
+atlas = ExtResource("1_ypedd")
+region = Rect2(320, 113, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v60vp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b17mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oslna")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbti5")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olx6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d34v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4wo0")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75l41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdk1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptrqo")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_57mjm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("ViewportTexture_pwrnl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_v60vp")
+animation = &"iddle"
