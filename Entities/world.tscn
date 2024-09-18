@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://clkgpn4pysg6"]
+[gd_scene load_steps=7 format=3 uid="uid://clkgpn4pysg6"]
 
 [ext_resource type="Texture2D" uid="uid://wdv7m3i4we32" path="res://Assets/KenneyAssets/Tilemap/tileset_legacy.png" id="1_1ngjn"]
 [ext_resource type="PackedScene" uid="uid://bq6btw8m5tgkd" path="res://Entities/character.tscn" id="2_cclxi"]
 [ext_resource type="Script" path="res://Scripts/character.gd" id="3_3btjl"]
+[ext_resource type="PackedScene" uid="uid://c816ih8m5cjw3" path="res://Entities/basic_entity.tscn" id="4_bewlj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fa51"]
 texture = ExtResource("1_1ngjn")
@@ -4320,3 +4321,6 @@ script = ExtResource("3_3btjl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_bewlj")]
+position = Vector2(103, -9)

@@ -101,4 +101,4 @@ shape = SubResource("RectangleShape2D_57mjm")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_v60vp")
-animation = &"jump"
+animation = &"crouch"
