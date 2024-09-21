@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://c816ih8m5cjw3"]
+
+[ext_resource type="Texture2D" uid="uid://bo1eu6dmb008k" path="res://Assets/KenneyAssets/Tilesheet/colored-transparent.png" id="1_h7oej"]
+
+[sub_resource type="Animation" id="Animation_v8vog"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.523599, 0.0, -0.523599, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_j4xfl"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgj76"]
+_data = {
+"Idle": SubResource("Animation_v8vog"),
+"walk": SubResource("Animation_j4xfl")
+}
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_h7oej")
+region_enabled = true
+region_rect = Rect2(408, 0, 16, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mgj76")
+}
+autoplay = "Idle"
+speed_scale = 2.0

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://mkx5kq802ncg"]
+
+[ext_resource type="Script" path="res://Scripts/WorkerEntity.gd" id="1_rqcby"]
+[ext_resource type="PackedScene" uid="uid://c816ih8m5cjw3" path="res://Entities/basic_entity.tscn" id="2_pscmm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh1ig"]
+size = Vector2(14, 16)
+
+[node name="WorkerEntity" type="RigidBody2D"]
+script = ExtResource("1_rqcby")
+
+[node name="Sprite2D" parent="." instance=ExtResource("2_pscmm")]
+scale = Vector2(1.02438, 1.02438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uh1ig")
