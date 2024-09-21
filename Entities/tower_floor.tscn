@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://by56ruat742f7"]
+[gd_scene load_steps=8 format=3 uid="uid://by56ruat742f7"]
 
 [ext_resource type="Texture2D" uid="uid://wdv7m3i4we32" path="res://Assets/KenneyAssets/Tilemap/tileset_legacy.png" id="1_iagp5"]
 [ext_resource type="Texture2D" uid="uid://bo1eu6dmb008k" path="res://Assets/KenneyAssets/Tilesheet/colored-transparent.png" id="2_cmb5u"]
+[ext_resource type="Script" path="res://Scripts/tower_floor.gd" id="3_wb761"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fa51"]
 texture = ExtResource("1_iagp5")
@@ -9,7 +10,6 @@ separation = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -804,7 +804,7 @@ separation = Vector2i(1, 1)
 2:6/0 = 0
 2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:6/0/physics_layer_0/angular_velocity = 0.0
-2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
 2:6/1 = 1
 2:6/1/flip_v = true
 2:6/1/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -8941,10 +8941,25 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_3fa51")
 sources/1 = SubResource("TileSetAtlasSource_fholp")
 
-[node name="Tilemap" type="TileMap"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6w7v"]
+size = Vector2(163, 79)
+
+[node name="Tilemap" type="TileMap" groups=["Floor"]]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(0, -16)
 tile_set = SubResource("TileSet_o6p6h")
 format = 2
-layer_0/tile_data = PackedInt32Array(-196608, 393216, 65550, -262144, 393216, 65550, -65536, 393216, 65550, -65535, 131072, 6, -65531, 1376256, 1, -131067, 1376256, 1, -196603, 1376256, 1, -262139, 1376256, 1, -65527, 131072, 65542, -65526, 393216, 131086, -196598, 393216, 131086, -262134, 393216, 131086, 0, 393216, 13, 1, 393216, 13, 2, 393216, 13, 3, 393216, 13, 4, 393216, 13, 6, 393216, 13, 7, 393216, 13, 8, 393216, 13, 9, 393216, 13, 10, 393216, 13, 5, 1376256, 1, -327680, 393216, 13, -327679, 393216, 13, -327678, 393216, 13, -327677, 393216, 13, -327676, 393216, 13, -327675, 1376256, 1, -327674, 393216, 13, -327673, 393216, 13, -327672, 393216, 13, -327671, 393216, 13, -327670, 393216, 13, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -131072, 0, 0, -65534, 0, 0, -131070, 0, 0, -196606, 0, 0, -262142, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, -65532, 0, 0, -131068, 0, 0, -196604, 0, 0, -262140, 0, 0, -262138, 0, 0, -196602, 0, 0, -131066, 0, 0, -65530, 0, 0, -65529, 0, 0, -131065, 0, 0, -196601, 0, 0, -262137, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, -131063, 0, 0, -196599, 0, 0, -262135, 0, 0, -131062, 0, 0)
+layer_0/tile_data = PackedInt32Array(-196608, 393216, 65550, -262144, 393216, 65550, -65536, 393216, 65550, -65535, 131072, 6, -65531, 0, 0, -131067, 0, 0, -196603, 0, 0, -262139, 0, 0, -65527, 131072, 65542, -65526, 393216, 131086, -196598, 393216, 131086, -262134, 393216, 131086, 0, 393216, 13, 1, 393216, 13, 2, 393216, 13, 3, 393216, 13, 4, 393216, 13, 6, 393216, 13, 7, 393216, 13, 8, 393216, 13, 9, 393216, 13, 10, 393216, 13, 5, 1376256, 1, -327680, 393216, 13, -327679, 393216, 13, -327678, 393216, 13, -327677, 393216, 13, -327676, 393216, 13, -327675, 1376256, 1, -327674, 393216, 13, -327673, 393216, 13, -327672, 393216, 13, -327671, 393216, 13, -327670, 393216, 13, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -131072, 0, 0, -65534, 0, 0, -131070, 0, 0, -196606, 0, 0, -262142, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, -65532, 0, 0, -131068, 0, 0, -196604, 0, 0, -262140, 0, 0, -262138, 0, 0, -196602, 0, 0, -131066, 0, 0, -65530, 0, 0, -65529, 0, 0, -131065, 0, 0, -196601, 0, 0, -262137, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, -131063, 0, 0, -196599, 0, 0, -262135, 0, 0, -131062, 0, 0)
+script = ExtResource("3_wb761")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(88.5, -33.5)
+shape = SubResource("RectangleShape2D_q6w7v")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

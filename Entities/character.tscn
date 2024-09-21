@@ -102,9 +102,3 @@ texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_v60vp")
 animation = &"crouch"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-limit_bottom = 120
-limit_smoothed = true
-position_smoothing_enabled = true

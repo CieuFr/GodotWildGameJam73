@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh1ig"]
 size = Vector2(14, 16)
 
-[node name="WorkerEntity" type="RigidBody2D"]
+[node name="WorkerEntity" type="CharacterBody2D" groups=["Worker"]]
+input_pickable = true
 script = ExtResource("1_rqcby")
 
 [node name="Sprite2D" parent="." instance=ExtResource("2_pscmm")]
@@ -14,3 +15,6 @@ scale = Vector2(1.02438, 1.02438)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uh1ig")
+
+[connection signal="CanDrop" from="." to="." method="_on_can_drop"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
