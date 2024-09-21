@@ -1882,7 +1882,6 @@ separation = Vector2i(1, 1)
 6:14/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:14/1/physics_layer_0/angular_velocity = 0.0
 6:14/2 = 2
-6:14/2/flip_h = true
 6:14/2/transpose = true
 6:14/2/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:14/2/physics_layer_0/angular_velocity = 0.0

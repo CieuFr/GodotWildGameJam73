@@ -2,11 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bo1eu6dmb008k" path="res://Assets/KenneyAssets/Tilesheet/colored-transparent.png" id="1_h7oej"]
 
-[sub_resource type="Animation" id="Animation_j4xfl"]
-resource_name = "walk"
-length = 2.0
-loop_mode = 1
-
 [sub_resource type="Animation" id="Animation_v8vog"]
 resource_name = "Idle"
 length = 2.0
@@ -36,6 +31,11 @@ tracks/1/keys = {
 "values": [0.0, 0.523599, 0.0, -0.523599, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_j4xfl"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mgj76"]
 _data = {
 "Idle": SubResource("Animation_v8vog"),
@@ -43,7 +43,6 @@ _data = {
 }
 
 [node name="Sprite2D" type="Sprite2D"]
-scale = Vector2(1.1, 1.1)
 texture = ExtResource("1_h7oej")
 region_enabled = true
 region_rect = Rect2(408, 0, 16, 16)
