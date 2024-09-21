@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://l4b0bi7kugjd"]
+
+[node name="Laser" type="Node2D"]
+rotation = -3.07078
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+rotation = -0.0348546
+emitting = false
+amount = 1
+lifetime = 0.6
+one_shot = true
+local_coords = true
+gravity = Vector2(34, 480)
+scale_amount_min = 4.0
+scale_amount_max = 4.0

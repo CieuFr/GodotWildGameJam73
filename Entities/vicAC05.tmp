@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b05urnegu4x7x"]
+[gd_scene load_steps=6 format=3 uid="uid://b05urnegu4x7x"]
 
 [ext_resource type="PackedScene" uid="uid://chjwvnqxxbar3" path="res://Entities/tilemap.tscn" id="1_v1twm"]
 [ext_resource type="PackedScene" uid="uid://cmgfei75wdca0" path="res://Entities/enemy.tscn" id="2_qn3fw"]
 [ext_resource type="Script" path="res://Entities/game_manager.gd" id="3_umfcn"]
 [ext_resource type="Script" path="res://Entities/enemy_spawner.gd" id="4_8f88t"]
-[ext_resource type="PackedScene" uid="uid://by56ruat742f7" path="res://Entities/tower_floor.tscn" id="5_j350a"]
 [ext_resource type="PackedScene" uid="uid://dn7yxnlcjoy1x" path="res://Entities/turret.tscn" id="5_t4ujc"]
 
 [node name="VictorTest" type="Node2D"]
@@ -13,7 +12,7 @@
 layer_0/tile_data = PackedInt32Array(0, 393216, 12, 1, 393216, 12, 2, 393216, 12, 3, 393216, 12, 4, 393216, 12, 5, 393216, 12, 6, 393216, 12, 7, 393216, 12, 8, 393216, 12, 9, 393216, 12, 10, 393216, 12, 11, 393216, 12, 12, 393216, 12, 13, 393216, 12, 14, 393216, 12, 15, 393216, 12)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(115, -1)
+zoom = Vector2(3, 3)
 
 [node name="GameManager" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -24,13 +23,10 @@ script = ExtResource("4_8f88t")
 enemies = ExtResource("2_qn3fw")
 
 [node name="Timer" type="Timer" parent="EnemySpawner"]
-wait_time = 2.0
+wait_time = 0.5
 
 [node name="Turret" parent="." instance=ExtResource("5_t4ujc")]
-position = Vector2(99, -41)
+position = Vector2(41, -9)
 rotation = -3.14159
-
-[node name="Tilemap2" parent="." instance=ExtResource("5_j350a")]
-position = Vector2(94, -16)
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
