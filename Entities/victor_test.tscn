@@ -31,6 +31,6 @@ position = Vector2(99, -41)
 rotation = -3.14159
 
 [node name="Tilemap2" parent="." instance=ExtResource("5_j350a")]
-position = Vector2(94, -16)
+position = Vector2(21, -15)
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]

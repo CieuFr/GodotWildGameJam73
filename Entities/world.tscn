@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bq6btw8m5tgkd" path="res://Entities/character.tscn" id="2_cclxi"]
 [ext_resource type="Texture2D" uid="uid://bo1eu6dmb008k" path="res://Assets/KenneyAssets/Tilesheet/colored-transparent.png" id="2_gxp4t"]
 [ext_resource type="Script" path="res://Scripts/character.gd" id="3_3btjl"]
-[ext_resource type="PackedScene" uid="uid://c816ih8m5cjw3" path="res://Entities/basic_entity.tscn" id="4_bewlj"]
+[ext_resource type="PackedScene" uid="uid://c816ih8m5cjw3" path="res://Entities/basic_entity_REMOTE_1987.tscn" id="4_bewlj"]
 [ext_resource type="PackedScene" uid="uid://du0g824wbupgd" path="res://Entities/killzone.tscn" id="6_60i0r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or8o3"]

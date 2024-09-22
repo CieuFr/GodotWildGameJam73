@@ -23,7 +23,6 @@ func _select_target(area):
 		for child in allchildren :
 			if child is Tower_floor :
 				in_range_enemies.push_back(child)
-	#= area.get_overlapping_areas()
 	
 	for body in in_range_enemies : 
 		var enemy_turret_distance = body.global_position.distance_to(global_position)
