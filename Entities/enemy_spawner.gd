@@ -27,9 +27,7 @@ func _select_target(area):
 	for body in in_range_enemies : 
 		var enemy_turret_distance = body.global_position.distance_to(global_position)
 		if  enemy_turret_distance < minDistance :
-			print("aaaa")
 			new_target = body
-			print(new_target)
 			minDistance = enemy_turret_distance
 	if new_target :
 		return new_target
@@ -37,15 +35,15 @@ func _select_target(area):
 
 func _on_timer_timeout():
 	var new_enemy = enemies.instantiate()
-	get_tree().current_scene.add_child(new_enemy)
+	
 	var y = rng.randi_range(0,-game_manager.tower_height)
 	var side = rng.randi_range(0,2)
 	var target = _select_target(new_enemy.get_node("Area2D"))
-	
 	new_enemy.position.y = y
 	new_enemy.position.x = 0 if side else 150+175+150
 	var new_enemy_cast = new_enemy as Enemy
 	new_enemy_cast.target = target
+	get_tree().current_scene.add_child(new_enemy)
 	
 	pass # Replace with function body.
 

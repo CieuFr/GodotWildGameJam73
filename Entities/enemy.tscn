@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_atvdh"]
 [ext_resource type="PackedScene" uid="uid://c816ih8m5cjw3" path="res://Entities/basic_entity_REMOTE_1987.tscn" id="1_v0fuy"]
+[ext_resource type="PackedScene" uid="uid://blj7aptj0ffm8" path="res://Entities/explosion.tscn" id="3_8syg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ak4mv"]
 size = Vector2(14, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4i6ba"]
-radius = 481.649
-
 [node name="enemy" type="Node2D"]
 script = ExtResource("1_atvdh")
+deathVFX = ExtResource("3_8syg0")
+speed = 5
 
 [node name="Sprite2D" parent="." instance=ExtResource("1_v0fuy")]
 region_rect = Rect2(442, 102, 16, 16)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Enemy"]]
 collision_layer = 4
 motion_mode = 1
 
@@ -26,10 +26,6 @@ shape = SubResource("RectangleShape2D_ak4mv")
 wait_time = 15.0
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_4i6ba")
+[node name="explosion" parent="." instance=ExtResource("3_8syg0")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

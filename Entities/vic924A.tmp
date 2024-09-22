@@ -29,6 +29,6 @@ enemies = ExtResource("2_qn3fw")
 wait_time = 2.0
 
 [node name="Tilemap2" parent="." instance=ExtResource("5_j350a")]
-position = Vector2(32, -16)
+position = Vector2(33, -15)
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
