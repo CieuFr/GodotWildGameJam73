@@ -22,34 +22,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
-layout_mode = 1
-offset_right = 196.0
-offset_bottom = 82.0
-columns = 2
-
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer"]
-layout_mode = 2
-texture = ExtResource("1_l1bat")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="NinePatchRect/GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "0
-"
-
-[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/GridContainer"]
-layout_mode = 2
-texture = ExtResource("2_sp584")
-stretch_mode = 3
-
-[node name="Label2" type="Label" parent="NinePatchRect/GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "0
-"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = 1
@@ -59,116 +31,76 @@ offset_left = -161.0
 offset_bottom = 212.0
 grow_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="GoldIcon" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 1
+offset_right = 66.0
+offset_bottom = 79.0
+texture = ExtResource("1_l1bat")
+stretch_mode = 5
 
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
+[node name="GoldAmount" type="Label" parent="NinePatchRect"]
 layout_mode = 2
+offset_left = 67.0
+offset_top = 10.0
+offset_right = 144.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DevotionIcon" type="TextureRect" parent="NinePatchRect"]
+offset_top = 64.0
+offset_right = 66.0
+offset_bottom = 143.0
+texture = ExtResource("2_sp584")
+stretch_mode = 5
+
+[node name="DevotionAmount" type="Label" parent="NinePatchRect"]
+offset_left = 68.0
+offset_top = 71.0
+offset_right = 145.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EntityToBuy" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -244.0
+offset_top = 1.0
+offset_right = -99.0
+offset_bottom = 86.0
+grow_horizontal = 0
 texture_normal = ExtResource("3_swslu")
 stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+[node name="Price" type="Label" parent="NinePatchRect/EntityToBuy"]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer/HBoxContainer"]
-layout_mode = 2
+offset_left = 106.0
+offset_top = 12.0
+offset_right = 175.0
+offset_bottom = 67.0
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.901961, 0.282353, 0.180392, 1)
+theme_override_font_sizes/font_size = 40
 text = "10"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+[node name="Ressource" type="TextureRect" parent="NinePatchRect/EntityToBuy"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 22.0
+offset_top = -1.0
+offset_right = 99.0
+offset_bottom = 71.0
+grow_horizontal = 0
 size_flags_horizontal = 3
 texture = ExtResource("2_sp584")
-stretch_mode = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-texture_normal = ExtResource("3_swslu")
-stretch_mode = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.901961, 0.282353, 0.180392, 1)
-text = "100"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_sp584")
-stretch_mode = 3
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-texture_normal = ExtResource("3_swslu")
-stretch_mode = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer3/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.901961, 0.282353, 0.180392, 1)
-text = "100"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer3/HBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_sp584")
-stretch_mode = 3
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-texture_normal = ExtResource("3_swslu")
-stretch_mode = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer4/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.901961, 0.282353, 0.180392, 1)
-text = "100"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer4/HBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_sp584")
-stretch_mode = 3
-
-[connection signal="pressed" from="NinePatchRect/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/EntityToBuy" to="." method="_on_texture_button_pressed"]

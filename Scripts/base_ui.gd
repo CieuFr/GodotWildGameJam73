@@ -14,7 +14,7 @@ func _process(delta):
 
 
 func _on_texture_button_pressed():
-	var can_buy = game_manager.can_buy(RessourceType.DEVOTION,int($NinePatchRect/VBoxContainer/HBoxContainer/HBoxContainer/Label.text))
+	var can_buy = game_manager.can_buy(RessourceType.DEVOTION,int($NinePatchRect/EntityToBuy/Price.text))
 	if can_buy : 
 		var worker = workers.instantiate()
 		get_owner().add_child(worker)

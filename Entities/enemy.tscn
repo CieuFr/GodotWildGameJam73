@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_atvdh"]
 [ext_resource type="PackedScene" uid="uid://c816ih8m5cjw3" path="res://Entities/basic_entity_REMOTE_1987.tscn" id="1_v0fuy"]
-[ext_resource type="PackedScene" uid="uid://blj7aptj0ffm8" path="res://Entities/explosion.tscn" id="3_8syg0"]
+[ext_resource type="PackedScene" path="res://Entities/explosion.tscn" id="3_8syg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ak4mv"]
 size = Vector2(14, 16)
