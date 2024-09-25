@@ -19,7 +19,6 @@ signal CanDrop(bool)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_manager = get_parent().get_node("GameManager")
-	print(game_manager)
 	timeBeforeNextMovement=randf_range(1,3);
 	time_start = Time.get_unix_time_from_system()
 	$Sprite2D.region_rect=Rect2(408+17*randi_range(0,7),17*randi_range(0,4),16,16)
@@ -37,6 +36,10 @@ func _physics_process(delta):
 func _process(delta):
 	if dragging :
 		position = get_global_mouse_position() - of
+		if Input.is_action_pressed("select"):
+			dragging=false
+			if not canDrop : 
+				position = posBeforeDrag
 		pass
 	if Time.get_unix_time_from_system() - time_start > timeBeforeNextMovement :
 		direction = randi_range(-1,1)

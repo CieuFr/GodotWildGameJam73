@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Entities/victor_test.gd" id="1_2foso"]
 [ext_resource type="PackedScene" uid="uid://chjwvnqxxbar3" path="res://Entities/tilemap.tscn" id="1_v1twm"]
 [ext_resource type="PackedScene" uid="uid://cmgfei75wdca0" path="res://Entities/enemy.tscn" id="2_qn3fw"]
-[ext_resource type="Script" path="res://Entities/game_manager.gd" id="3_umfcn"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="3_umfcn"]
 [ext_resource type="Script" path="res://Entities/enemy_spawner.gd" id="4_8f88t"]
 [ext_resource type="PackedScene" uid="uid://by56ruat742f7" path="res://Entities/tower_floor.tscn" id="5_j350a"]
 
