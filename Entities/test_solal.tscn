@@ -1,15 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://d10lt66l82wrg"]
+[gd_scene load_steps=4 format=3 uid="uid://d10lt66l82wrg"]
 
 [ext_resource type="PackedScene" uid="uid://by56ruat742f7" path="res://Entities/tower_floor.tscn" id="1_suliw"]
 [ext_resource type="PackedScene" uid="uid://mkx5kq802ncg" path="res://Entities/worker_entity.tscn" id="2_e550d"]
+[ext_resource type="PackedScene" uid="uid://bn16iqc6d48ty" path="res://Entities/game_manager.tscn" id="3_raegu"]
 
 [node name="Test" type="Node2D"]
 
 [node name="Tilemap" parent="." instance=ExtResource("1_suliw")]
 
 [node name="WorkerEntity" parent="." instance=ExtResource("2_e550d")]
-position = Vector2(58, -128)
+position = Vector2(66, -49)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(90, -58)
 zoom = Vector2(3, 3)
+
+[node name="GameManager" parent="." instance=ExtResource("3_raegu")]
+
+[node name="WorkerEntity2" parent="." instance=ExtResource("2_e550d")]
+position = Vector2(39, -47)
+
+[node name="WorkerEntity3" parent="." instance=ExtResource("2_e550d")]
+position = Vector2(106, -44)
